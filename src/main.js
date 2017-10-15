@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import App from './component/app';
 import {Provider} from 'react-redux';
 import appCreateStore from './lib/app-create-store';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 let store = appCreateStore();
 
@@ -10,7 +11,9 @@ class AppContainer extends React.Component {
   render() {
     return(
       <Provider store={store}>
-        <App />
+        <MuiThemeProvider>
+          <App />
+        </MuiThemeProvider>
       </Provider>
     );
   }
