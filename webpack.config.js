@@ -19,7 +19,8 @@ let plugins = [
   }),
 ];
 
-if(production) {
+if (production) {
+  console.log(process.env.NODE_ENV);
   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
 }
 
